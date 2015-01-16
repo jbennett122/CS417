@@ -38,7 +38,7 @@ int main(int argc,char* argv[]) {
 	 	}
 
 	//file already open?
-	 cerr<<fs.is_open()<<endl;
+	// cerr<<fs.is_open()<<endl;
 
 	//take argument and open file
 	 fs.open(argv[1]);
@@ -77,18 +77,18 @@ int main(int argc,char* argv[]) {
 	cout<<"rows"<<rows<<endl;
 	cout<<"cols"<<cols<<endl;
 
-int num;
 
-//create matrix and assign random values
+
+//create matrix and assign   values
 	x = new double *[rows];
 	for (int i=0; i < rows; i++)
 	{
 		x[i]=new double [cols];
 
 		for(int j=0;j<cols;j++){
-			fs>>num;
+			fs>>nums;
 
-			x[i][j]=num;
+			x[i][j]=nums;
 
 			//x[i][j]=rand()%100;
 
