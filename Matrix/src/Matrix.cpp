@@ -15,11 +15,13 @@
 #include <fstream>
 #include <istream>
 #include <string>
-
+#include "brackets.h"
 
 using namespace std;
 
 int main(int argc,char* argv[]) {
+
+brackets(argc,argv);
 
 	//double pointer pointer
 	 double **x;
