@@ -21,7 +21,8 @@ using namespace std;
 
 int main(int argc,char* argv[]) {
 
-brackets(argc,argv);
+
+	brackets(argc,argv);
 
 	//double pointer pointer
 	 double **x;
