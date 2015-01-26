@@ -16,22 +16,26 @@
 #include <istream>
 #include <string>
 #include "brackets.h"
+#include "addMatrix.h"
+
 
 using namespace std;
 
 int main(int argc,char* argv[]) {
 
 
-	brackets(argc,argv);
+	// brackets(argc,argv);
 
 	//double pointer pointer
-	 double **x;
-
+	 double **A;
+	 double **B;
+	 double **X;
 	//rows and columns of the matrix
-	 int rows,cols,nums;
+	 int n,m,nums;
 	 char matrix;
 	 string test;
-	//stream variable
+
+	 //stream variable
 	 ifstream fs;
 
 	 //is the file found?
@@ -47,7 +51,7 @@ int main(int argc,char* argv[]) {
 	 fs.open(argv[1]);
 
 	//should be open now
-	 cerr<<fs.is_open()<<endl;
+	// cerr<<fs.is_open()<<endl;
 
 	   if (!fs.is_open())
 	   {
@@ -62,52 +66,117 @@ int main(int argc,char* argv[]) {
 
 	getline(fs,test);
 
-	cout<<test<<endl;
+	//cout<<test<<endl;
 
 	//basic matrix test
 		//rows=3;
 		//cols=3;
 
+	fs.clear();
+	char c;
 
-	/*char c;
-	while(fs){
-		fs.get(c);
-		cout<<c<" ";
-	}*/
+		fs>>c;
+		cout<<"Matrix "<<c<<endl;
 
-	fs>>matrix>>rows>>cols;
 
-	cout<<"rows"<<rows<<endl;
-	cout<<"cols"<<cols<<endl;
+	fs>>n>>m;
+
+	//cout<<"rows"<<rows<<endl;
+	//cout<<"cols"<<cols<<endl;
 
 
 
 //create matrix and assign   values
-	x = new double *[rows];
-	for (int i=0; i < rows; i++)
+	A = new double *[n];
+	for (int i=0; i < n; i++)
 	{
-		x[i]=new double [cols];
+		A[i]=new double [m];
 
-		for(int j=0;j<cols;j++){
+		for(int j=0;j<m;j++){
 			fs>>nums;
 
-			x[i][j]=nums;
+			A[i][j]=nums;
 
 			//x[i][j]=rand()%100;
 
 		}
 	}
 
-	for (int i=0; i < rows; i++)
+	for (int i=0; i < n; i++)
 		{
-			for(int j=0;j<cols;j++){
+		cout<<"|";
+			for(int j=0;j<m;j++){
 
-			  cout<<"["<<x[i][j]<<"] ";
+			  cout<<" "<<setw(2)<<A[i][j]<<" ";
 			}
-		cout<<endl;
+		cout<<"|"<<endl;
 		}
 
-	cout << "Lets make some matrices!" << endl; // prints Lets make some matrices!
+	//cout << "Lets make some matrices!" << endl; // prints Lets make some matrices!
+
+
+
+//Create the right hand side
+	fs>>c;
+	cout<<"Matrix "<<c<<endl;
+	fs>>n>>m;
+
+	B = new double *[n];
+		for (int i=0; i < n; i++)
+		{
+			B[i]=new double [m];
+
+			for(int j=0;j<m;j++){
+				fs>>nums;
+
+				B[i][j]=nums;
+
+				//x[i][j]=rand()%100;
+
+			}
+		}
+
+		for (int i=0; i < n; i++)
+			{
+			cout<<"|";
+				for(int j=0;j<m;j++){
+
+				  cout<<" "<<setw(2)<<B[i][j]<<" ";
+				}
+			cout<<"|"<<endl;
+			}
+
+//X vector
+		fs>>c;
+		cout<<"Matrix "<<c<<endl;
+		fs>>n>>m;
+
+		X = new double *[n];
+				for (int i=0; i < n; i++)
+				{
+					X[i]=new double [m];
+
+					for(int j=0;j<m;j++){
+
+
+						X[i][j]=1;
+
+						//x[i][j]=rand()%100;
+
+					}
+				}
+
+				for (int i=0; i < n; i++)
+					{
+					cout<<"|";
+						for(int j=0;j<m;j++){
+
+						  cout<<" "<<setw(2)<<X[i][j]<<" ";
+						}
+					cout<<"|"<<endl;
+					}
+
+pass(A,B,X,n,m);
 
 
 	return 0;

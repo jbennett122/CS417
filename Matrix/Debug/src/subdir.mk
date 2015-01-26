@@ -5,16 +5,19 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Matrix.cpp \
+../src/addMatrix.cpp \
 ../src/brackets.cpp \
 ../src/ttt.cpp 
 
 OBJS += \
 ./src/Matrix.o \
+./src/addMatrix.o \
 ./src/brackets.o \
 ./src/ttt.o 
 
 CPP_DEPS += \
 ./src/Matrix.d \
+./src/addMatrix.d \
 ./src/brackets.d \
 ./src/ttt.d 
 
