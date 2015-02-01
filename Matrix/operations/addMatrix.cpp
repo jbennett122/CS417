@@ -20,7 +20,7 @@ using namespace std;
 double pass(double **A,double **B,double **X,int n,int m){
 
 
-cerr<<"test"<<n<<m<<endl<<endl<<endl;
+//cerr<<"test"<<n<<m<<endl<<endl<<endl;
 
 
 for (int i=0; i < n; i++)
@@ -34,7 +34,7 @@ for (int i=0; i < n; i++)
 		}
 
 
-cerr<<"test"<<n<<m<<endl<<endl<<endl;
+//cerr<<"test"<<n<<m<<endl<<endl<<endl;
 
 for (int i=0; i < n; i++)
 			{
@@ -48,7 +48,7 @@ for (int i=0; i < n; i++)
 
 
 
-cerr<<"test"<<n<<m<<endl<<endl<<endl;
+//cerr<<"test"<<n<<m<<endl<<endl<<endl;
 
 for (int i=0; i < n; i++)
 		{
@@ -59,6 +59,13 @@ for (int i=0; i < n; i++)
 			}
 		cout<<"|"<<endl;
 		}
+
+
+
+
+
+return **A,**B,**X;
+
 }
 
 
